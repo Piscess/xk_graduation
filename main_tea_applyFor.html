@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head lang="zh-CN">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width">
+		<title></title>
+		<meta http-equiv="x-ua-compatible" content="IE=edge">
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/jquery-1.11.3.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!--[if lt IE 9]-->
+    		<script src="js/html5shiv.min.js"></script>
+    		<script src="js/respond.min.js"></script>
+    	<!--[endif]-->	
+	</head>
+	<body>
+		<div class="navbar navbar-default">
+    		<div class="container">
+    <!--第一部分: 导航条头部 = 品牌 + 汉堡包    -->
+		        <div class="navbar-header">
+		            <a href="#" class="navbar-brand">XK教育管理系统</a>
+		            <a href="#my-menu" class="navbar-toggle" data-toggle="collapse">
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </a>
+		        </div>
+		        <a href="#" class="navbar-right navbar-link navbar-text">退出</a>
+		        <span class="navbar-right navbar-text">|</span>
+		        <span class="navbar-right navbar-link navbar-text">用户名</span>
+		    <!--第二部分: 导航条折叠 = 导航+按钮+超链接+文本+表单-->
+		        <div class="collapse navbar-collapse" id="my-menu">
+		            <ul class="nav navbar-nav">
+		                <li><a href="#">课程查询</a></li>
+		                <li><a href="#">教室申请</a></li>
+		            </ul>	
+			    </div>
+			</div>
+		</div>
+	<div class="panel panel-default main">
+		<div class="panel-heading">
+			<h3 class="panel-title center-block">
+				<span class="tit" data-toggle="collapse" data-target="#demo1">教师基本信息</span>
+			</h3>
+		</div>
+		<div class="panel-collapse collapse in" id="demo1">
+			<div class="panel-body  center-block">
+				<ul class="list-inline">
+					<li class="col-md-4 col-sm-6 col-xs-12">姓名:李磊</li>
+					<li class="col-md-4 col-sm-6 col-xs-12">系别:信息技术与科学</li>
+					<li class="col-md-4 col-sm-6 col-xs-12">类型:教师</li>
+					<li class="col-md-4 col-sm-6 col-xs-12">邮箱:lilei@qq.com</li>
+				</ul>
+			</div>
+		</div>
+		<div class="panel-heading">
+			<h3 class="panel-title center-block">
+				<span class="tit" data-toggle="collapse" data-target="#demo2">教室申请</span>
+			</h3>
+		</div>
+		<div class="panel-collapse collapse in" id="demo2">
+			<div class="panel-body">
+				<form class="applyFor_form">
+  					<div class="form-group center-block">
+	  						<label for="className">请选择课程</label>
+							<select class="form-control" id="className" name="className">
+							  <option value="0">--请选择--</option>
+							  <option value="1">SQL</option>
+							  <option value="2">PHP</option>
+							  <option value="3">JAVA</option>
+							  <option value="4">NodeJS</option>
+							</select>
+					</div>
+					<div class="form-group center-block">
+	  						<label for="classTime">请选择时间</label>
+							<select class="form-control" id="classTime" name="classTime">
+							  <option value="0">--请选择--</option>
+							  <option value="1">第一节</option>
+							  <option value="2">第二节</option>
+							  <option value="3">第三节</option>
+							  <option value="4">第四节</option>
+							</select>
+					</div>
+					<div class="form-group center-block">
+	  						<label for="classSite">请选择教室</label>
+							<select class="form-control" id="classSite" name="classSite">
+							  <option value="0">--请选择--</option>
+							  <option value="1">日益101</option>
+							  <option value="2">日益102</option>
+							  <option value="3">日益103</option>
+							  <option value="4">日益104</option>
+							</select>
+					</div>
+					<div class="form-group row center-block">
+						<input type="button" class="btn btn-info" value="提交申请" />
+					</div>
+				</form>
+			</div>
+		</div>
+		
+	<div class="navbar navbar-inverse navbar-fixed-bottom">
+		<div class="container">
+			<span href="#" class="navbar-brand">联系我们 QQ:785204560 邮箱:xiaoc.cc@qq.com</span>
+		</div>
+	</div>	
+	</body>
+</html>
+ 

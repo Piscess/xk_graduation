@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+	<head lang="zh-CN">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width">
+		<title></title>
+		<meta http-equiv="x-ua-compatible" content="IE=edge">
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/jquery-3.2.1.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!--[if lt IE 9]-->
+    		<script src="js/html5shiv.min.js"></script>
+    		<script src="js/respond.min.js"></script>
+    	<!--[endif]-->	
+	</head>
+	<body>
+	<div class="navbar navbar-default">
+		<div class="container">
+<!--第一部分: 导航条头部 = 品牌 + 汉堡包    -->
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">XK教育管理系统</a>
+				<a href="#my-menu" class="navbar-toggle" data-toggle="collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+			</div>
+			<a href="#" class="navbar-right navbar-link navbar-text" id="logout_btn">退出</a>
+			<span class="navbar-right navbar-text">|</span>
+			<span class="navbar-right navbar-link navbar-text" id="userName">用户名</span>
+		<!--第二部分: 导航条折叠 = 导航+按钮+超链接+文本+表单-->
+			<div class="collapse navbar-collapse" id="my-menu">
+				<ul class="nav navbar-nav">
+					<li><a href="#">课程查询</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default main" id="main1">
+		<div class="panel-heading">
+			<h3 class="panel-title center-block">
+				<span class="tit" data-toggle="collapse" data-target="#demo1" id="tit1">基本信息</span>
+			</h3>
+		</div>
+		<div class="panel-collapse collapse in" id="demo1">
+			<div class="panel-body center-block">
+			</div>
+		</div>
+		<div class="panel-heading">
+			<h3 class="panel-title center-block">
+				<span class="tit" data-toggle="collapse" data-target="#demo2">课表</span>
+			</h3>
+		</div>
+		<div class="panel-collapse collapse in" id="demo2">
+			<div class="panel-body">
+				<form class="form-inline center-block" id="checkschedule" style="width: 80%; margin-bottom: 4%;">
+				</form>
+				<table class="table table-bordered text-center table-responsive" id="t1">
+					<thead>
+					</thead>
+					<tbody id="tbody1">
+					</tbody>
+				</table>
+				<div class="row">
+					<div class="col-xs-12">
+						<ul class="pagination" id="pagination">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel-heading">
+			<h3 class="panel-title center-block">
+				<span class="tit" data-toggle="collapse" data-target="#demo3">课程表下载</span>
+			</h3>
+		</div>
+		<div class="panel-collapse collapse in" id="demo3">
+			<div class="panel-body center-block">
+				<ul class="list-inline" id="dllist">
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="navbar navbar-inverse navbar-fixed-bottom">
+		<div class="container">
+			<span href="#" class="navbar-brand">联系我们 QQ:785204560 邮箱:xiaoc.cc@qq.com</span>
+		</div>
+	</div>
+	<div class="schedule detail" style="display: none;">
+		<a href="#">X</a>
+		<p></p>
+		<div class="table-responsive table">
+			<table class="table table-bordered text-center" id="admin_sche">
+			</table>
+		</div>
+		<button class="btn btn-info">关闭</button>
+	</div>
+	<div class="schedule update" style="display: none;">
+		<a href="#">X</a>
+		<p></p>
+		<div class="table-responsive table">
+			<table class="table table-bordered text-center" id="update_sche">
+			</table>
+		</div>
+		<button class="btn btn-info">更改</button>
+	</div>
+	<!--模态框:添加新课程表-->
+	<div class="modal fade" id="insertModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title" id="myModalLabel">添加新的课程表</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-inline center-block" id="insert_form">
+						<div class="form-group center-block col-xs-12 text-center">
+							<label for="in_department">系别:</label>
+							<input type="text" id="in_department" name="in_department" class="form-control" />
+						</div>
+						<div class="form-group center-block col-xs-12 text-center">
+							<label for="in_class">专业:</label>
+							<input type="text" id="in_class" name="in_class" class="form-control" />
+						</div>
+						<div class="form-group center-block col-xs-12  text-center">
+							<label for="in_className">班级:</label>
+							<input type="text" id="in_className" name="in_className" class="form-control" />
+						</div>
+						<div class="form-group center-block col-xs-12  text-center">
+							<label for="in_grade">年级:</label>
+							<input type="text" id="in_grade" name="in_grade" class="form-control" />
+						</div>
+						<div class="form-group center-block col-xs-12  text-center">
+							<label for="xlsx-upload">上传:</label>
+							<input type="text" readonly class="form-control" value="" id="up-routes">
+							<input type="button" class="btn btn-info" value="..." id="upload">
+							<input type="button" class="btn btn-info" value="上传" id="up-btn">
+							<input type="file" id="xlsx-upload" style="display: none">
+						</div>
+					</form>
+					<div class="table-responsive table">
+						<table class="table table-bordered text-center" id="insert_sche">
+							<thead>
+							<tr>
+								<td>上课时间</td>
+								<td>星期一</td>
+								<td>星期二</td>
+								<td>星期三</td>
+								<td>星期四</td>
+								<td>星期五</td>
+								<td>星期六</td>
+								<td>星期天</td>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>第一节</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>第二节</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+							</tr>
+							<tr>
+								<td>第三节</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>第四节</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+
+							<tr>
+								<td>晚自习</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+				</div>
+					<p id="in_sid" style="display: none"></p>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary" id="in_btn">提交</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+		</div>
+	</div>
+	<!--模态框:教师/管理员处理教室申请-->
+	<div class="modal fade" id="applyModal" tabindex="-1" role="dialog" aria-labelledby="applyModallabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title" id="applyModallabel"></h4>
+				</div>
+				<div class="modal-body" id="applyFor">
+					<table class="table text-center" id="applyFor_table">
+					</table>
+					<div class="row center-block" id="applyFor_form">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary" id="aF_btn">提交</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div>
+	</body>
+</html>
+<script src="js/isLogin.js"></script>
+<script src="js/main.js"></script>

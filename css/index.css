@@ -1,0 +1,41 @@
+/*主页 登陆/注册*/
+/*主体main样式*/
+
+.main{
+	width: 40%;
+	height: 30%;
+	margin: 10% auto 0;
+	padding:3%;
+	border-radius: 5px;
+	background-color: rgba(255,255,255,0.4);
+}
+.bg{
+	position:absolute;
+	z-index:-1;
+	width:100%;
+	height:100%;
+}
+.bg img{
+	width: 100%;
+	height: 100%;
+}
+@media screen and (max-width:767px){
+	.bg{
+		background-image: url("../img/back2.png");
+		background-position: center;
+	}
+	.main{
+		width: 80%;
+		height: 30%;
+		margin: 50% auto;
+		border-radius: 5px;
+		background-color: rgba(255,255,255,0.4);
+	}
+}
+body:before{
+	content:"";
+	display:table;
+}
+.main_reg{
+	margin-top: 5%;
+}

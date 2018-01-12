@@ -1,0 +1,96 @@
+.main{
+	margin: 0 auto;
+}
+.tit:hover{
+	cursor:pointer;
+}
+.term{
+	margin-bottom: 15px;
+}
+form>div{
+	width: 40%;
+}
+#demo1>div{
+	width: 80%;
+}
+.panel-title{
+	width: 80%;
+}
+.applyFor_form>div:last-child{
+	width: 5%;
+}
+#t1{
+	width: 80%;
+	margin: 0 auto;
+}
+#t1 td{
+	width: 12.5%;
+}
+#demo3>div{
+	width:80%;
+}
+.schedule{
+	width: 80%;
+	height: 70%;
+	position: fixed;
+	top: 10%;
+	left: 10%;
+	right: 10%;
+	border: 1px solid #ccc;
+	background-color: #FFFFFF;
+	z-index:10;
+}
+.schedule p{
+	width: 100%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+}
+.schedule .table{
+	margin: 0 auto;
+	width: 90%;
+	height: 65%;
+}
+#admin_sche{
+	width: 100%;
+	height: 90%;
+	overflow-y: visible;
+}
+.schedule a{
+	width: 2%;
+	height: 5%;
+	position: absolute;
+	right: 2%;
+	top: 2%;
+	font-weight: bold;
+	font-size: 24px;
+	color: #bbbbbb;
+	text-decoration: none;
+}
+.schedule button{
+	display: block;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+@media screen and (max-width:767px) {
+	.schedule a{
+		display: none;
+	}
+}
+#demo2 div:last-child{
+	text-align: center;
+}
+#insert_form{
+	width: 80%;
+	margin-top: 2%;
+	margin-bottom: 8%;
+}
+#insert_form div:last-child{
+	margin-top:10px;
+	margin-bottom: 10px;
+}
+#up-routes{
+	width: 60%;
+}
